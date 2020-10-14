@@ -15,6 +15,7 @@ namespace DictionarySampleCorePracticeConsoleUI
         private static void GetName()
         {
             Dictionary<int, string> employeeDictionary = new Dictionary<int, string>();
+            employeeDictionary[0] = "no one";
             employeeDictionary[1] = "John";
             employeeDictionary[2] = "Sally";
             employeeDictionary[3] = "Johnny";
@@ -24,6 +25,7 @@ namespace DictionarySampleCorePracticeConsoleUI
 
             // get the keyboard input as an int
             Console.WriteLine(employeeDictionary[ReturnInput()]);
+
             Console.WriteLine("...");
             Console.WriteLine("...");
             Console.WriteLine("...");
@@ -47,7 +49,21 @@ namespace DictionarySampleCorePracticeConsoleUI
         {
             string input = string.Empty;
             input = Console.ReadLine();
-            int output = Int32.Parse(input);
+            //int output = Int32.Parse(input);
+            int number = 0;
+            int output = 0;
+
+            bool success = Int32.TryParse(input, out number);
+
+            if (success)
+            {
+                output = number;
+            }
+            else
+            {
+                Console.WriteLine($"Attempted conversion of '{input}' failed.");
+            }
+
             return output;
         }
     }
