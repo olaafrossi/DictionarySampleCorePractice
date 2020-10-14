@@ -21,10 +21,9 @@ namespace DictionarySampleCorePracticeConsoleUI
             employeeDictionary[4] = "Kelly";
 
             Console.WriteLine("punch in 1-4 for ID and get a name");
-            string input = string.Empty;
-            input = Console.ReadLine();
-            int employeeID = Int32.Parse(input); 
-            Console.WriteLine(employeeDictionary[employeeID]);
+
+            // get the keyboard input as an int
+            Console.WriteLine(employeeDictionary[ReturnInput()]);
             Console.WriteLine("...");
             Console.WriteLine("...");
             Console.WriteLine("...");
@@ -42,6 +41,14 @@ namespace DictionarySampleCorePracticeConsoleUI
             {
                 Console.WriteLine($"{variable}");
             }
+        }
+
+        private static int ReturnInput()
+        {
+            string input = string.Empty;
+            input = Console.ReadLine();
+            int output = Int32.Parse(input);
+            return output;
         }
     }
 }
