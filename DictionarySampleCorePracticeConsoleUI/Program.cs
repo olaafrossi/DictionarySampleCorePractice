@@ -25,8 +25,17 @@ namespace DictionarySampleCorePracticeConsoleUI
 
             Console.WriteLine("punch in 1-4 for ID and get a name");
 
-            // get the keyboard input as an int
-            Console.WriteLine(employeeDictionary[ReturnInput()]);
+            try
+            {
+                // get the keyboard input as an int
+                Console.WriteLine(employeeDictionary[ReturnInput()]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.WriteLine("out of range");
+                // throw;
+            }
         }
 
         private static void TestDics()
