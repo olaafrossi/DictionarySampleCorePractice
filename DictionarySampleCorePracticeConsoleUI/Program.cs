@@ -8,7 +8,9 @@ namespace DictionarySampleCorePracticeConsoleUI
         private static void Main(string[] args)
         {
             GetName();
+            PrintSpaces();
             TestDics();
+            PrintSpaces();
             Console.WriteLine("Hello World!");
         }
 
@@ -25,10 +27,6 @@ namespace DictionarySampleCorePracticeConsoleUI
 
             // get the keyboard input as an int
             Console.WriteLine(employeeDictionary[ReturnInput()]);
-
-            Console.WriteLine("...");
-            Console.WriteLine("...");
-            Console.WriteLine("...");
         }
 
         private static void TestDics()
@@ -65,6 +63,13 @@ namespace DictionarySampleCorePracticeConsoleUI
             }
 
             return output;
+        }
+
+        private static void PrintSpaces()
+        {
+            Console.WriteLine("...");
+            Console.WriteLine("...");
+            Console.WriteLine("...");
         }
     }
 }
